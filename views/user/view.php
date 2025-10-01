@@ -15,7 +15,7 @@ $controllerId = $this->context->uniqueId . '/';
 ?>
 <div class="user-view">
 
-    <h1><?= Html::encode($this->title) ?></h1>
+    <h1><i class="fa-solid fa-user"></i> <?= Html::encode($this->title) ?></h1>
 
     <p>
         <?php
