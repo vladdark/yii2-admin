@@ -5,7 +5,7 @@ namespace mdm\admin\controllers;
 use Yii;
 use mdm\admin\models\Assignment;
 use mdm\admin\models\searchs\Assignment as AssignmentSearch;
-use yii\web\Controller;
+use mdm\admin\components\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
@@ -131,11 +131,6 @@ class AssignmentController extends Controller
      */
     protected function findModel($id)
     {
-        $class = $this->userClassName;
-        if (($user = $class::findIdentity($id)) !== null) {
-            return new Assignment($id, $user);
-        } else {
-            throw new NotFoundHttpException('The requested page does not exist.');
-        }
+        return $this->findAssignmentModel($id);
     }
 }
