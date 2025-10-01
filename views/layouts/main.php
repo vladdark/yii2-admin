@@ -8,6 +8,8 @@ use yii\helpers\Html;
 /* @var $content string */
 
 list(,$url) = Yii::$app->assetManager->publish('@mdm/admin/assets');
+
+$this->registerLinkTag(['rel'=>"stylesheet", 'href'=>"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"]);
 $this->registerCssFile($url.'/main.css');
 ?>
 <?php $this->beginPage() ?>
