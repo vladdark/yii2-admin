@@ -13,7 +13,7 @@ $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="user-index">
 
-    <h1><?= Html::encode($this->title) ?></h1>
+    <h1><i class="fa-solid fa-users"></i> <?= Html::encode($this->title) ?></h1>
 
     <?=
     GridView::widget([

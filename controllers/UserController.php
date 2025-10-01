@@ -3,6 +3,7 @@
 namespace mdm\admin\controllers;
 
 use mdm\admin\components\UserStatus;
+use mdm\admin\components\Controller;
 use mdm\admin\models\form\ChangePassword;
 use mdm\admin\models\form\Login;
 use mdm\admin\models\form\PasswordResetRequest;
@@ -16,7 +17,6 @@ use yii\base\UserException;
 use yii\filters\VerbFilter;
 use yii\mail\BaseMailer;
 use yii\web\BadRequestHttpException;
-use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 
 /**
@@ -252,10 +252,6 @@ class UserController extends Controller
      */
     protected function findModel($id)
     {
-        if (($model = User::findOne($id)) !== null) {
-            return $model;
-        } else {
-            throw new NotFoundHttpException('The requested page does not exist.');
-        }
+        return $this->findUserModel($id);
     }
 }
