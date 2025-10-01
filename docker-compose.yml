@@ -1,0 +1,21 @@
+services:
+  db:
+    image: mysql:8.0
+    ports:
+      - "127.0.0.1:3308:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: 'test'
+      MYSQL_DATABASE: 'mdm_admin_test'
+
+  php:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "127.0.0.1:8084:80"
+    environment:
+      PHP_IDE_CONFIG: "serverName=yii2admin"
+    volumes:
+      - .:/var/www/html
+    depends_on:
+      - db
