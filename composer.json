@@ -1,12 +1,12 @@
 {
-    "name": "mishamosher/yii2-admin",
+    "name": "vladdark/yii2-admin",
     "description": "RBAC Auth manager for Yii2 ",
     "keywords": ["yii", "admin", "auth", "rbac"],
     "type": "yii2-extension",
     "license": "BSD-3-Clause",
     "support": {
-        "issues": "https://github.com/mishamosher/yii2-admin/issues",
-        "source": "https://github.com/mishamosher/yii2-admin"
+        "issues": "https://github.com/vladdark/yii2-admin/issues",
+        "source": "https://github.com/vladdark/yii2-admin"
     },
     "authors": [
         {
@@ -16,10 +16,15 @@
     ],
     "minimum-stability": "dev",
     "require": {
+        "php": ">=7.4",
         "yiisoft/yii2": "~2.0.7"
     },
     "require-dev": {
-        "yiisoft/yii2-codeception": "~2.0"
+        "yiisoft/yii2-codeception": "~2.0",
+        "codeception/codeception": "^4",
+        "codeception/module-yii2": "^1",
+        "codeception/module-filesystem": "2.0.x-dev",
+        "codeception/module-asserts": "2.0.x-dev"
     },
     "suggest": {
         "yiisoft/yii2-bootstrap": "Used when using layout 'left-menu', 'right-menu' or 'top-menu'"
@@ -37,6 +42,17 @@
         "asset-installer-paths": {
             "npm-asset-library": "vendor/npm",
             "bower-asset-library": "vendor/bower"
+        }
+    },
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://asset-packagist.org"
+        }
+    ],
+    "config": {
+        "allow-plugins": {
+            "yiisoft/yii2-composer": true
         }
     }
 }
